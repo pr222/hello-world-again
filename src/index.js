@@ -8,7 +8,7 @@
  */
 
 // First step. The environment
-console.info('You found it! Well done! Now; go back to your editor and change this message and save the file!')
+console.info('Helloooo!')
 
 // Second step. Coding
 /**
@@ -24,7 +24,22 @@ async function getRandomUsers (size = 10) {
 }
 
 getRandomUsers().then(users => {
-  // TODO: Write code here
   console.log('Hello World Again!')
-  
+
+  const userList = []
+
+  users.forEach(user => {
+    const userInfo = {
+      name: `${user.name.first} ${user.name.last}`,
+      phone: `${user.phone}`,
+      email: `${user.email}`,
+      picture: `${user.picture.medium}`
+    }
+
+    userList.push(userInfo)
+
+    return userInfo
+  })
+
+  console.table(userList)
 })
